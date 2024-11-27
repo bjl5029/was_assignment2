@@ -1,0 +1,63 @@
+.movie-details-page {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  min-height: 100vh; /* 전체 높이 설정 */
+  background-color: #141414; /* 넷플릭스 스타일 배경색 */
+  color: white;
+  padding-top: 60px; /* 네비게이션 바 높이만큼 여백 */
+}
+
+.movie-details-poster {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.movie-details-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+}
+
+.movie-details-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.movie-details-info p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e5e5e5;
+}
+
+/* 닫기 버튼 스타일 */
+.close-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* 찜하기 버튼 스타일 */
+.wishlist-button {
+  background-color: #E50914;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.wishlist-button:hover {
+  background-color: #f40612;
+}
