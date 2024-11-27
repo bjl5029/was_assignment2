@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "//bjl5029.github.io/was_assignment2/static/css/main.b5a72b84.css",
-    "main.js": "//bjl5029.github.io/was_assignment2/static/js/main.118a045c.js",
-    "static/media/terms.md": "//bjl5029.github.io/was_assignment2/static/media/terms.07daf9f6bf2a3e123f3b.md",
-    "index.html": "//bjl5029.github.io/was_assignment2/index.html",
-    "main.b5a72b84.css.map": "//bjl5029.github.io/was_assignment2/static/css/main.b5a72b84.css.map",
-    "main.118a045c.js.map": "//bjl5029.github.io/was_assignment2/static/js/main.118a045c.js.map"
+    "main.css": "/was_assignment2/static/css/main.b5a72b84.css",
+    "main.js": "/was_assignment2/static/js/main.fbd7d72f.js",
+    "static/media/terms.md": "/was_assignment2/static/media/terms.138d931603e03b58cdc1.md",
+    "index.html": "/was_assignment2/index.html",
+    "main.b5a72b84.css.map": "/was_assignment2/static/css/main.b5a72b84.css.map",
+    "main.fbd7d72f.js.map": "/was_assignment2/static/js/main.fbd7d72f.js.map"
   },
   "entrypoints": [
     "static/css/main.b5a72b84.css",
-    "static/js/main.118a045c.js"
+    "static/js/main.fbd7d72f.js"
   ]
 }
