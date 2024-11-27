@@ -79,12 +79,13 @@
   border: none;
   color: black;
   padding: 10px 20px;
-  width: 100px;
+  width: 120px;  /* 너비를 120px로 증가 */
   border-radius: 50px;
   font-size: 1rem;
   cursor: pointer;
   font-weight: bold;
   transition: all 0.3s ease;
+  white-space: nowrap;  /* 텍스트가 줄바꿈되지 않도록 설정 */
 }
 
 .play-button:hover,
@@ -132,18 +133,4 @@
     flex-direction: column;
     gap: 10px;
   }
-}
-/* 기존 스타일에 추가 */
-.loading {
-  text-align: center;
-  padding: 20px;
-  font-size: 1.2rem;
-  color: #fff;
-}
-
-.end-message {
-  text-align: center;
-  padding: 20px;
-  font-size: 1.2rem;
-  color: #aaa;
 }
