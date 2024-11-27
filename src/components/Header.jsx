@@ -12,7 +12,7 @@ const Header = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('loggedInUser');
-    setToast({ message: '안녕히 가십시오', type: 'success' });
+    setToast({ message: '안녕히 가세요, 또 뵙겠습니다!', type: 'success' });
     setIsModalOpen(false);
 
     setTimeout(() => {
@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-logo">
-        <Link to="/">🎬 백정렬의 하드디스크</Link>
+        <Link to="/">🎬 JBNU 시네마</Link>
       </div>
       <div className="menu-icon" onClick={() => setIsMenuOpen((prev) => !prev)}>
         ☰
