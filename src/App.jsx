@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { HashRouter as Router, Routes, Route, useNavigate, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Popular from './pages/Popular';
 import Search from './pages/Search';
@@ -18,18 +18,21 @@ const AppWrapper = () => {
 
   useEffect(() => {
     const initializeAuth = async () => {
+      // 이미 초기화되었다면 처리하지 않음
       if (isInitialized) return;
       
       try {
         await new Promise(resolve => setTimeout(resolve, 100));
         const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
         const rememberedUser = JSON.parse(localStorage.getItem('rememberMe'));
-        const currentPath = window.location.hash; // pathname 대신 hash 사용
+        const currentPath = window.location.pathname;
 
         if (loggedInUser) {
-          if (currentPath === '#/signin') {
-            navigate('/home');
+          // 첫 진입시에만 홈으로 이동
+          if (currentPath === '/signin') {
+            navigate('/');
           }
+          // 새로고침시에는 현재 페이지 유지
         } else if (rememberedUser) {
           const users = JSON.parse(localStorage.getItem('users')) || [];
           const user = users.find((u) => u.email === rememberedUser.email);
@@ -43,12 +46,13 @@ const AppWrapper = () => {
                 apiKey: user.apiKey,
                 wishlist: user.wishlist || []
               }));
-              if (currentPath === '#/signin') {
-                navigate('/home');
+              if (currentPath === '/signin') {
+                navigate('/');
               }
             } else {
               localStorage.removeItem('rememberMe');
               navigate('/signin');
+    
             }
           } else {
             localStorage.removeItem('rememberMe');
@@ -70,7 +74,7 @@ const AppWrapper = () => {
   }, [navigate, isInitialized]);
 
   if (isLoading) {
-    return <div>로딩중...</div>;
+    return <div>로딩중...</div>; // 또는 로딩 스피너 컴포넌트
   }
 
   return (
@@ -78,10 +82,9 @@ const AppWrapper = () => {
       <Header />
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/signin" element={<SignIn />} />
         <Route
-          path="/home"
+          path="/"
           element={
             <PrivateRoute>
               <Home />
